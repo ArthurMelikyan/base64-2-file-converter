@@ -28,8 +28,8 @@ print($mime_type);
 $pdf_decoded = base64_decode (preg_replace("/^data:(.*);base64,/",'',$pdf_content));
 /* _______________ */
 
-// write/create a file by decoded base64 text
-$pdf = fopen (time().$mime_type ,'w');
+// generate a file by decoded base64 text
+$pdf = fopen (time().'_generated_'.$mime_type ,'w');
 
 fwrite ($pdf,$pdf_decoded);
 
